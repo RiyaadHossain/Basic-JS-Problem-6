@@ -131,13 +131,14 @@ let numbers = [34, 0, 92, 73, 39, 62, -13, -34, 83, 4]
 function noNegative(num){
 
     let pureNum = [];
-    for(const x of num){
-        if(x < 0){
-            return pureNum;
+    for(let x of num){
+        if(x >= 0){
+            pureNum.push(x);
+        } else{
+            break;
         }
-        pureNum.push(x);
     }
-
+    return pureNum;
 }
 
 console.log(noNegative(numbers));
