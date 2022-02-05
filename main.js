@@ -34,6 +34,20 @@
 // ০. রিকার্সন বুঝলে চমৎকার। আর না বুঝলে আপাতত রিকার্সন না বুঝলে সেটাকে সাইডে রেখে দাও। শুধু মাথায় রাখো রিকার্সন নামে একটা জিনিস আছে। সেটা একটা ফাংশনকে নিজের ভিতর থেকে কল করে।
 
 
+// Recursion - A function call itself inside of its body
+
+// Formula - f(n-1) + n = f(n)
+
+
+function recursion(n){
+    if( n === 0){
+        return 0;
+    } else{
+      return recursion(n - 1) + n;
+    }
+}
+
+// console.log(recursion(3));
 
 
 
@@ -102,22 +116,18 @@ let myFriends = [`Sangram`, `Yeasin`, `Nazmul`, `Refayer`, `Kazi Jamil`, `Someon
 
 function bestFriend(friends){
     // let friend = '';
-    let length = 0;
+    let length = myFriends[0];
     for(const x of myFriends){
 
-        if(x.length > length){
-            length = x.length;
+        if(x.length > length.length){
+            length = x;
         }
     }
+    return length;
 
-    for(let i = 0; i < friends.length; i++){
-        if(friends[i].length == length){
-            return friends[i];
-        }
-    }
 }
 
-// console.log(bestFriend(myFriends));
+console.log(bestFriend(myFriends));
 
 
 
@@ -130,15 +140,15 @@ let numbers = [34, 0, 92, 73, 39, 62, -13, -34, 83, 4]
 
 function noNegative(num){
 
-    let pureNum = [];
+    let posNum = [];
     for(let x of num){
         if(x >= 0){
-            pureNum.push(x);
+            posNum.push(x);
         } else{
             break;
         }
     }
-    return pureNum;
+    return posNum;
 }
 
-console.log(noNegative(numbers));
+// console.log(noNegative(numbers));
